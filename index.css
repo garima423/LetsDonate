@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&family=Quantico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+
+
+
+
+body{
+  background-color: #f8dd30;
+}
+
+.nav-menu {
+  float: left;
+}
+
+.nav-menu ul li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 30px;
+  position: relative;
+}
+
+.nav-menu ul li:last-child {
+  margin-right: 0;
+}
+
+.nav-menu ul li:hover .dropdown {
+  top: 86px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.nav-menu ul li:hover>a:after {
+  opacity: 1;
+}
+
+.nav-menu ul li.active a:after {
+  opacity: 1;
+}
+
+.nav-menu ul li a {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  display: block;
+  padding: 32px 8px 30px;
+  position: relative;
+  font-family: "Quantico", sans-serif;
+}
+
+.nav-menu ul li a:after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+  background: #009603;
+  content: "";
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.nav-menu ul li .dropdown {
+  position: absolute;
+  left: 0;
+  top: 105px;
+  background: #111111;
+  width: 180px;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.nav-menu ul li .dropdown li {
+  display: block;
+  margin-right: 0;
+}
+
+.nav-menu ul li .dropdown li a {
+  color: #ffffff;
+  padding: 5px 18px;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+.nav-menu ul li .dropdown li a:after {
+  display: none;
+}
+
+.top-search {
+  font-size: 15px;
+  height: 50px;
+  width: 50px;
+  color: #ffffff;
+  background: #009603;
+  line-height: 50px;
+  text-align: center;
+  cursor: pointer;
+  float: right;
+  margin: 19px 0 16px;
+}
+
+
+main{
+  margin-left: 10vw;
+  width: 80vw;
+}
+
+.card-deck img{
+border-top-left-radius: 40px;
+border-top-right-radius: 40px;
+}
+
+.card-deck h3{
+  font-family: 'Berkshire Swash', cursive;
+}
+.card-deck h4{
+  font-family: 'Patrick Hand', cursive;
+}
+
+
+.card:hover{
+     transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+.container {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.title {
+  margin-bottom: 30px;
+  font-family: 'Mukta Mahee', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+}
+
+.wrapper {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 20px 0 rgba(0,0,0, .1);
+  padding: 27.5px;
+}
+
+#contactForm {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas:
+    'name'
+    'email'
+    'company'
+    'phone'
+    'message';
+}
+
+.required-field {
+  grid-column: 1 / 2;
+}
+
+.submit-button {
+  grid-column: 2 / 3;
+}
+
+.name-field {
+  grid-area: name;
+  grid-column: 1 / 3;
+}
+
+.email-field {
+  grid-area: email;
+  grid-column: 1 / 3;
+}
+
+.company-field {
+  grid-area: company;
+  grid-column: 1 / 3;
+}
+
+.phone-field {
+  grid-area: phone;
+  grid-column: 1 / 3;
+}
+
+.message-field {
+  grid-area: message;
+  grid-column: 1 / 3;
+}
+
+/* FORM STYLES */
+
+.contact-us {
+  margin: 0 0 30px;
+  font-family: 'Mukta Mahee', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #5dc3f2;
+}
+
+.contact form {
+  border: 0;
+}
+
+.contact form label {
+  display: block;
+}
+
+.contact form p {
+  margin: 0;
+  font-family: 'Mukta Mahee', sans-serif;
+  font-weight: 200;
+  font-size: 12px;
+  color: rgba(74, 86, 96, 1);
+}
+
+.contact form input, .contact form textarea {
+  font-family: 'Mukta Mahee', sans-serif;
+  font-weight: 200;
+  font-size: 14px;
+  width: 100%;
+  padding: .4em .8em;
+  background: rgba(249, 250, 250, .5);
+  border: 1px solid rgba(74, 86, 96, .1);
+  border-radius: 2.5px;
+  outline-color: #5dc3f2;
+}
+
+.contact form button {
+  font-family: 'Mukta Mahee', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #fff;
+  background: #5dc3f2;
+  width: 90px;
+  height: 30px;
+  border: 0;
+  border-radius: 15px;
+}
+
+.submit-button {
+  align-self: center;
+  justify-self: end;
+}
+
+.contact form button:hover, .contact form button:focus {
+  background: #49b0e7;
+  color: #fff;
+  outline: 0;
+  transition: background-color 0.3s ease-out;
+}
+
+.required-field {
+  font-family: 'Mukta Mahee', sans-serif;
+  font-weight: 200;
+  font-size: 10px;
+  color: rgba(74, 86, 96, 0.75);
+  align-self: center;
+  justify-self: start;
+}
+
+span {
+  color: #5dc3f2;
+}
+
+.alert {
+  margin-bottom: 1em;
+  padding: 10px;
+  background: #49b0e7;
+  font-family: 'Mukta Mahee', sans-serif;
+  font-size: 14px;
+  text-align: center;
+  color: #fff;
+  border-radius: 2.5px;
+  display: none;
+}
+
+/* LARGE SCREENS */
+
+@media (min-width: 500px) {
+  #contactForm {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'name company'
+      'email phone'
+      'message message';
+  }
+
+  .name-field {
+    grid-area: name;
+    grid-column: 1 / 2;
+  }
+
+  .email-field {
+    grid-area: email;
+    grid-column: 1 / 2;
+  }
+
+  .company-field {
+    grid-area: company;
+    grid-column: 2 / 3;
+  }
+
+  .phone-field {
+    grid-area: phone;
+    grid-column: 2 / 3;
+  }
+
+  .message-field {
+    grid-area: message;
+    grid-column: 1 / 3;
+  }
+}
+
+#heading{
+  font-family: 'Kaushan Script', cursive;
+
+}
+table {
+  border-collapse: collapse;
+  background-color: black;
+  border-radius: 30px;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+  color: white;
+  font-family: 'Kaushan Script', cursive;
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #a48200;
+
+}
+
+
+/*footer*/
+footer .row{
+  background-color: #232b2b;
+  color: white;
+  height: 300px;
+  font-family: 'New Tegomin', serif;
+}
+footer a{
+  color: white;
+}
+.bottom{
+  margin-top: 100px;
+}

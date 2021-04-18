@@ -199,40 +199,42 @@ function checkUserSIPassword(){
       document.getElementById("userSIPasswordError").style.display = "none";
   }
 }
+
 // xxxxxxxxxx Check email or password exsist in firebase authentication xxxxxxxxxx    
 function signIn(){
   var userSIEmail = document.getElementById("userSIEmail").value;
   var userSIPassword = document.getElementById("userSIPassword").value;
   var userSIEmailFormate = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   var userSIPasswordFormate = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}/;      
-
+  
   var checkUserEmailValid = userSIEmail.match(userSIEmailFormate);
   var checkUserPasswordValid = userSIPassword.match(userSIPasswordFormate);
-
+  
   if(checkUserEmailValid == null){
       return checkUserSIEmail();
   }else if(checkUserPasswordValid == null){
       return checkUserSIPassword();
   }else{
       firebase.auth().signInWithEmailAndPassword(userSIEmail, userSIPassword).then((success) => {
-        alert('Succesfully Login')
-         window.location.replace("index.html");
-          swal({
-              type: 'successfull',
-              title: 'Succesfully signed in', 
-          }).then((value) => {
+        Swal.fire(
+            'Good job!',
+            'Now You are Logined!',
+            'success'
+            
+          ).then((value) => {
               setTimeout(function(){
-                  window.location.replace("profile.html");
+                  window.location.replace("signLog.html");
               }, 1000)
           });
       }).catch((error) => {
           // Handle Errors here.
           var errorCode = error.code;
           var errorMessage = error.message;
-          swal({
-              type: 'error',
-              title: 'Error',
-              text: "Error",
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!',
+            footer: '<a href>Why do I have this issue?</a>'
           })
       });
   }
@@ -332,11 +334,13 @@ function signOut(){
   firebase.auth().signOut().then(function() {
       // Sign-out successful.
      
-       window.location.replace("signLog.html");
-       alert('Log out successful')  
-      swal({
-          type: 'successfull',
-          title: 'Signed Out', 
+    //    window.location.replace("index.html");
+    //    alert('Log out successful')  
+       Swal.fire({
+        title: 'Error!',
+        text: 'Do you want to Logout',
+        icon: 'error',
+        confirmButtonText: 'Yes'
       }).then((value) => {
           setTimeout(function(){
               window.location.replace("index.html");
@@ -345,7 +349,7 @@ function signOut(){
   }).catch(function(error) {
       // An error happened.
       let errorMessage = error.message;
-      swal({
+      Swal({
           type: 'error',
           title: 'Error',
           text: "Error",
